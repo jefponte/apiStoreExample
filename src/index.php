@@ -1,7 +1,7 @@
 <?php
             
-define("DB_INI", "../../loja_api_db.ini");
-define("API_INI", "../../loja_api_api_rest.ini");
+define("DB_INI", "../loja_api_db.ini");
+define("API_INI", "../loja_api_api_rest.ini");
              
 function autoload($classe) {
             
