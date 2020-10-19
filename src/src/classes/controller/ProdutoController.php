@@ -446,29 +446,17 @@ class ProdutoController {
 		}
 
         $adicionado = new Produto();
-        $adicionado->setId($jsonBody['id']);
+//         $adicionado->setId($jsonBody['id']);
 
         $adicionado->setDescricao($jsonBody['descricao']);
 
         $adicionado->setValor($jsonBody['valor']);
 
-        if ($this->dao->inserir($adicionado)) 
-                {
-			echo '
-
-<div class="alert alert-success" role="alert">
-  Sucesso 
-</div>
-
-';
+        if ($this->dao->insert($adicionado)) 
+        {
+            echo 'Sucess.';
 		} else {
-			echo '
-
-<div class="alert alert-danger" role="alert">
-  Falha 
-</div>
-
-';
+			echo 'Fail';
 		}
     }            
             
