@@ -226,7 +226,7 @@ class ProdutoController {
             
             $this->restGET();
             $this->restPOST();
-            $this->restPUT();
+//             $this->restPUT();
             $this->resDELETE();
         }else{
             header("WWW-Authenticate: Basic realm=\"Private Area\" ");
@@ -425,12 +425,12 @@ class ProdutoController {
         if ($_SERVER['REQUEST_METHOD'] != 'POST') {
             return;
         }
-        if (! array_key_exists('path', $_GET)) {
+        if (! array_key_exists('api', $_GET)) {
             echo 'Error. Path missing.';
             return;
         }
-        print_r($_GET);
-        $path = explode('/', $_GET['path']);
+        
+        $path = explode('/', $_GET['api']);
 
         if (count($path) == 0 || $path[0] == "") {
             echo 'Error. Path missing.';
