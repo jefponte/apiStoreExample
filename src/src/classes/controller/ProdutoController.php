@@ -225,8 +225,8 @@ class ProdutoController {
             header('Content-type: application/json');
             
             $this->restGET();
-            //$controller->restPOST();
-            //$controller->restPUT();
+            $this->restPOST();
+            $this->restPUT();
             $this->resDELETE();
         }else{
             header("WWW-Authenticate: Basic realm=\"Private Area\" ");
@@ -429,7 +429,7 @@ class ProdutoController {
             echo 'Error. Path missing.';
             return;
         }
-
+        print_r($_GET);
         $path = explode('/', $_GET['path']);
 
         if (count($path) == 0 || $path[0] == "") {
